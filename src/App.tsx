@@ -22,7 +22,6 @@ import { CoopStyle, Question, ResultDetails, Answer } from './types';
 import { QUESTIONS, RESULTS, HERO_IMAGE_PATH } from './data';
 import CoopCertificate from './components/CoopCertificate';
 import CoopOracle from './components/CoopOracle';
-import CoopDriveBackup from './components/CoopDriveBackup';
 
 type ActiveScreen = 'welcome' | 'quiz' | 'drumroll' | 'results';
 
@@ -299,21 +298,6 @@ export default function App() {
                   <p className="text-xs font-black italic mt-0.5">"If it shines, it must be mine!"</p>
                 </div>
 
-              </div>
-
-              {/* Bento Box 3: Google Drive Backup & Recovery Nest (span-12) */}
-              <div className="md:col-span-12">
-                <CoopDriveBackup 
-                  userName={userName}
-                  scores={scores}
-                  finalStyle={finalStyle}
-                  onRestore={(restoredName, restoredScores, restoredStyle) => {
-                    setUserName(restoredName);
-                    setScores(restoredScores as Record<CoopStyle, number>);
-                    setFinalStyle(restoredStyle as CoopStyle);
-                    setScreen('results');
-                  }}
-                />
               </div>
 
             </motion.div>
@@ -687,21 +671,6 @@ export default function App() {
                       <RotateCcw className="w-4 h-4 text-[#3D405B]" />
                       Return to Nest (Retake Quiz)
                     </button>
-                  </div>
-
-                  {/* Google Drive Backup Nest Panel */}
-                  <div className="pt-4 border-t-2 border-stone-200 mt-6">
-                    <CoopDriveBackup 
-                      userName={userName}
-                      scores={scores}
-                      finalStyle={finalStyle}
-                      onRestore={(restoredName, restoredScores, restoredStyle) => {
-                        setUserName(restoredName);
-                        setScores(restoredScores as Record<CoopStyle, number>);
-                        setFinalStyle(restoredStyle as CoopStyle);
-                        setScreen('results');
-                      }}
-                    />
                   </div>
 
                 </div>
