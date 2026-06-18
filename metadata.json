@@ -1,0 +1,6 @@
+{
+  "name": "Coop Leader Quiz",
+  "description": "Discover if you are a Head Rooster, Head Hen, or Free-Range Rebel in this comical, fun chicken coop leadership style quiz.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
